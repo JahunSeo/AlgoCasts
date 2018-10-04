@@ -14,7 +14,17 @@ function reverseInt(n) {
     .split("")
     .reverse()
     .join("")
+  // parseInt("51-") === 51
+  // parseInt("0051-") === 51
   return parseInt(rev) * Math.sign(n)
 }
+
+/**
+ *  In case of n === -15,
+ *  the value of variable rev is '51-', which of type is string.
+ *  but after the value is passed through the fuction, parseInt(),
+ *  the returned value is 15, which of type is integer.
+ *  So, we can just multiply the value by Math.sign(n) to complete the mission.
+ */
 
 module.exports = reverseInt
